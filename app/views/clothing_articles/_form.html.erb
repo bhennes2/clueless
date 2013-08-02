@@ -1,0 +1,30 @@
+<%= form_for(@clothing_article) do |f| %>
+  <% if @clothing_article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clothing_article.errors.count, "error") %> prohibited this clothing_article from being saved:</h2>
+
+      <ul>
+      <% @clothing_article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <fieldset>
+    <legend>Clothing Article</legend>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+    <%= f.label :style %>
+    <%= f.text_field :style %>
+    <%= f.label :category %>
+    <%= grouped_collection_select(:clothing_article, :category, @categories, :sub_categories, :name, :name, :name) %><br/>
+    <%= f.submit nil, class: 'btn' %>
+  </fieldset>
+<% end %>

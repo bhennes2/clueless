@@ -1,0 +1,33 @@
+<fieldset>
+  <legend>Article: <%= @clothing_article.name %></legend>
+  <p>
+    <b>Brand:</b>
+    <%= @clothing_article.brand %>
+  </p>
+  <p>
+    <b>Size:</b>
+    <%= @clothing_article.size %>
+  </p>
+
+  <p>
+    <b>Color:</b>
+    <%= @clothing_article.color %>
+  </p>
+
+  <p>
+    <b>Style:</b>
+    <%= @clothing_article.style %>
+  </p>
+
+  <p>
+    <b>Category:</b>
+    <%= @clothing_article.category %>
+  </p>
+
+  <p>
+    <%= image_tag 'http://24.media.tumblr.com/avatar_0b4d45feb385_64.png' %>
+  </p>
+</fieldset>
+
+<%= link_to 'Edit', edit_clothing_article_path(@clothing_article), class: 'btn btn-warning' %>
+<%= link_to 'Back', clothing_articles_path, class: 'btn' %>
